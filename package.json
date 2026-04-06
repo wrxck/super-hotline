@@ -7,6 +7,8 @@
     "super-hotline": "./dist/cli/index.js"
   },
   "scripts": {
+    "build:assets": "tsx scripts/inline-assets.ts",
+    "prebuild": "npm run build:assets",
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -18,7 +20,8 @@
     "typescript": "^5.7",
     "vitest": "^3.0",
     "@cloudflare/workers-types": "^4.0",
-    "wrangler": "^4.0"
+    "wrangler": "^4.0",
+    "tsx": "^4.0"
   },
   "dependencies": {
     "ws": "^8.18"
