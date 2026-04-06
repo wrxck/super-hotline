@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>super-hotline</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Auth Screen -->
+  <div id="auth-screen" class="screen active">
+    <div class="auth-card">
+      <h1 class="brand">super-hotline</h1>
+      <p class="description">Enter the 6-digit code from your terminal</p>
+      <form id="auth-form" autocomplete="off">
+        <div class="code-inputs">
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1" autofocus>
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+          <span class="code-sep"></span>
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+          <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+        </div>
+        <div id="auth-error" class="auth-error" role="alert" hidden></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Screen -->
+  <div id="app-screen" class="screen">
+    <div id="tab-bar" role="tablist"></div>
+    <div id="content-area"></div>
+    <div class="status-bar">
+      <span id="status-dot" class="status-dot"></span>
+      <span id="status-text">Connecting...</span>
+      <span id="status-time" class="status-time"></span>
+    </div>
+  </div>
+
+  <!-- Ended Screen -->
+  <div id="ended-screen" class="screen">
+    <div class="auth-card">
+      <h1 class="brand">super-hotline</h1>
+      <p class="description">Session ended</p>
+    </div>
+  </div>
+
+  <script src="/auth.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
