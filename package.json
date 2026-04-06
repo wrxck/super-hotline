@@ -1,27 +1,57 @@
 {
   "name": "super-hotline",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Real-time authenticated browser bridge for Claude Code",
   "type": "module",
   "bin": {
-    "super-hotline": "./dist/cli/index.js"
+    "super-hotline": "dist/cli/index.js"
   },
+  "main": "./dist/worker/index.js",
+  "files": [
+    "dist/",
+    "src/client/",
+    "wrangler.toml",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build:assets": "tsx scripts/inline-assets.ts",
     "prebuild": "npm run build:assets",
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrxck/super-hotline.git"
+  },
+  "keywords": [
+    "claude-code",
+    "browser-bridge",
+    "cloudflare-workers",
+    "totp",
+    "developer-tools"
+  ],
+  "author": "Matt Hesketh",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wrxck/super-hotline/issues"
+  },
+  "homepage": "https://github.com/wrxck/super-hotline#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.0",
+    "@types/node": "^25.5.2",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.0",
     "typescript": "^5.7",
     "vitest": "^3.0",
-    "@cloudflare/workers-types": "^4.0",
-    "wrangler": "^4.0",
-    "tsx": "^4.0"
+    "wrangler": "^4.0"
   },
   "dependencies": {
     "ws": "^8.18"
