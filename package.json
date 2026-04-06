@@ -1,0 +1,26 @@
+{
+  "name": "super-hotline",
+  "version": "0.1.0",
+  "description": "Real-time authenticated browser bridge for Claude Code",
+  "type": "module",
+  "bin": {
+    "super-hotline": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7",
+    "vitest": "^3.0",
+    "@cloudflare/workers-types": "^4.0",
+    "wrangler": "^4.0"
+  },
+  "dependencies": {
+    "ws": "^8.18"
+  }
+}
